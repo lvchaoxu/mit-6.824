@@ -59,16 +59,20 @@ func HandleMapTask(mapf func(string, string) []KeyValue, task *Task) {
 	}
 	//写到中间文件中 mr-out-x-y
 	for i := 0; i < task.NReduce; i++ {
-		oname := fmt.Sprintf("mr-out-%v-%v", task.TaskNumber, i)
-		ofile, _ := os.Create(oname)
-		enc := json.NewEncoder(ofile)
+		tmpFile, err := os.CreateTemp(".", "example.*.txt")
+		if err != nil {
+			log.Fatal("创建临时文件失败")
+		}
+		enc := json.NewEncoder(tmpFile)
 		for _, kv := range intermediate[i] {
 			err := enc.Encode(&kv)
 			if err != nil {
 				log.Fatal("fatal error")
 			}
 		}
-		ofile.Close()
+		tmpFile.Close()
+		oname := fmt.Sprintf("mr-out-%v-%v", task.TaskNumber, i)
+		os.Rename(tmpFile.Name(), oname)
 	}
 }
 
@@ -87,10 +91,12 @@ func HandleReduceTask(reducef func(string, []string) string,
 			intermediate = append(intermediate, kv)
 		}
 		ifile.Close()
-		os.Remove(iname)
 	}
-	oname := fmt.Sprintf("mr-out-%v", task.TaskNumber)
-	ofile, _ := os.Create(oname)
+
+	tmpFile, err := os.CreateTemp(".", "example.*.txt")
+	if err != nil {
+		log.Fatal("创建临时文件失败")
+	}
 
 	sort.Sort(ByKey(intermediate))
 
@@ -104,10 +110,17 @@ func HandleReduceTask(reducef func(string, []string) string,
 			values = append(values, intermediate[k].Value)
 		}
 		output := reducef(intermediate[i].Key, values)
-		fmt.Fprintf(ofile, "%v %v\n", intermediate[i].Key, output)
+		fmt.Fprintf(tmpFile, "%v %v\n", intermediate[i].Key, output)
 		i = j
 	}
-	ofile.Close()
+	tmpFile.Close()
+	oname := fmt.Sprintf("mr-out-%v", task.TaskNumber)
+	os.Rename(tmpFile.Name(), oname)
+
+	for mapTaskNumber := 0; mapTaskNumber < task.MMap; mapTaskNumber++ {
+		iname := fmt.Sprintf("mr-out-%v-%v", mapTaskNumber, task.TaskNumber)
+		os.Remove(iname)
+	}
 }
 
 //
@@ -127,10 +140,11 @@ func Worker(mapf func(string, string) []KeyValue,
 			time.Sleep(time.Second)
 			continue
 		}
-		//log.Printf("申请到%v类型的编号为%v的任务", task.Type, task.TaskNumber)
-		if task.Type == "map" {
+		log.Printf("%v申请到%v类型的编号为%v的任务", fmt.Sprintf("%v", os.Getpid()), task.Type, task.TaskNumber)
+		switch task.Type {
+		case "map":
 			HandleMapTask(mapf, task)
-		} else {
+		case "reduce":
 			HandleReduceTask(reducef, task)
 		}
 		ReplyTaskDone(task.TaskNumber, task.Type)
@@ -139,7 +153,7 @@ func Worker(mapf func(string, string) []KeyValue,
 
 func Register() {
 	args := RegisterWorkerArgs{
-		Url: string(os.Getpid()),
+		Url: fmt.Sprintf("%v", os.Getpid()),
 	}
 	reply := RegisterWorkerReply{}
 	ok := call("Coordinator.RegisterWorker", &args, &reply)
@@ -152,7 +166,7 @@ func Register() {
 
 func RequestTask() *Task {
 	args := RequestTaskArgs{
-		Url: string(os.Getpid()),
+		Url: fmt.Sprintf("%v", os.Getpid()),
 	}
 	reply := RequestTaskReply{}
 	ok := call("Coordinator.AssignTask", &args, &reply)
@@ -166,7 +180,7 @@ func RequestTask() *Task {
 
 func ReplyTaskDone(TaskNumber int, Type string) {
 	args := TaskDoneArgs{
-		Url:        string(os.Getpid()),
+		Url:        fmt.Sprintf("%v", os.Getpid()),
 		TaskNumber: TaskNumber,
 		Type:       Type,
 	}

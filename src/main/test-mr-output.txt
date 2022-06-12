@@ -1,155 +1,485 @@
+2022/06/13 00:08:44 The number of input files is 8
 *** Starting wc test.
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
+2022/06/13 00:08:49 register successfully
+2022/06/13 00:08:49 register successfully
+2022/06/13 00:08:49 register successfully
+2022/06/13 00:08:49 14839申请到map类型的编号为1的任务
+2022/06/13 00:08:49 14840申请到map类型的编号为0的任务
+2022/06/13 00:08:49 14841申请到map类型的编号为2的任务
+2022/06/13 00:08:50 14840 report map type 0 task done
+2022/06/13 00:08:50 14840申请到map类型的编号为3的任务
+2022/06/13 00:08:52 14841 report map type 2 task done
+2022/06/13 00:08:52 14841申请到map类型的编号为4的任务
+2022/06/13 00:08:52 14839 report map type 1 task done
+2022/06/13 00:08:52 14839申请到map类型的编号为5的任务
+2022/06/13 00:08:52 14839 report map type 5 task done
+2022/06/13 00:08:52 14839申请到map类型的编号为6的任务
+2022/06/13 00:08:53 14840 report map type 3 task done
+2022/06/13 00:08:53 14840申请到map类型的编号为7的任务
+2022/06/13 00:08:55 14841 report map type 4 task done
+2022/06/13 00:08:55 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:08:55 14840 report map type 7 task done
+2022/06/13 00:08:55 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:08:55 14839 report map type 6 task done
+2022/06/13 00:08:55 14839申请到reduce类型的编号为0的任务
+2022/06/13 00:08:56 14841申请到reduce类型的编号为1的任务
+2022/06/13 00:08:56 14840申请到reduce类型的编号为2的任务
+2022/06/13 00:08:56 14839 report reduce type 0 task done
+2022/06/13 00:08:56 14839申请到reduce类型的编号为3的任务
+2022/06/13 00:08:57 14841 report reduce type 1 task done
+2022/06/13 00:08:57 14841申请到reduce类型的编号为4的任务
+2022/06/13 00:08:57 14839 report reduce type 3 task done
+2022/06/13 00:08:57 14839申请到reduce类型的编号为5的任务
+2022/06/13 00:08:58 14839 report reduce type 5 task done
+2022/06/13 00:08:58 14839申请到reduce类型的编号为6的任务
+2022/06/13 00:08:58 14840 report reduce type 2 task done
+2022/06/13 00:08:58 14840申请到reduce类型的编号为7的任务
+2022/06/13 00:08:58 14841 report reduce type 4 task done
+2022/06/13 00:08:58 14841申请到reduce类型的编号为8的任务
+2022/06/13 00:09:00 14840 report reduce type 7 task done
+2022/06/13 00:09:00 14840申请到reduce类型的编号为9的任务
+2022/06/13 00:09:00 14841 report reduce type 8 task done
+2022/06/13 00:09:01 14839 report reduce type 6 task done
+2022/06/13 00:09:01 14840 report reduce type 9 task done
 没有map或者reduce tasks来分配
+2022/06/13 00:09:01 request task from server failed
 没有map或者reduce tasks来分配
+2022/06/13 00:09:01 request task from server failed
 没有map或者reduce tasks来分配
+2022/06/13 00:09:02 request task from server failed
 --- wc test: PASS
+2022/06/13 00:09:02 The number of input files is 8
 *** Starting indexer test.
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
+2022/06/13 00:09:05 register successfully
+2022/06/13 00:09:05 register successfully
+2022/06/13 00:09:05 14897申请到map类型的编号为1的任务
+2022/06/13 00:09:05 14898申请到map类型的编号为0的任务
+2022/06/13 00:09:05 14898 report map type 0 task done
+2022/06/13 00:09:05 14898申请到map类型的编号为2的任务
+2022/06/13 00:09:05 14897 report map type 1 task done
+2022/06/13 00:09:05 14897申请到map类型的编号为3的任务
+2022/06/13 00:09:06 14898 report map type 2 task done
+2022/06/13 00:09:06 14898申请到map类型的编号为4的任务
+2022/06/13 00:09:06 14897 report map type 3 task done
+2022/06/13 00:09:06 14897申请到map类型的编号为5的任务
+2022/06/13 00:09:06 14897 report map type 5 task done
+2022/06/13 00:09:06 14897申请到map类型的编号为6的任务
+2022/06/13 00:09:06 14898 report map type 4 task done
+2022/06/13 00:09:06 14898申请到map类型的编号为7的任务
+2022/06/13 00:09:06 14897 report map type 6 task done
+2022/06/13 00:09:06 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:06 14898 report map type 7 task done
+2022/06/13 00:09:06 14898申请到reduce类型的编号为0的任务
+2022/06/13 00:09:06 14898 report reduce type 0 task done
+2022/06/13 00:09:07 14898申请到reduce类型的编号为1的任务
+2022/06/13 00:09:07 14898 report reduce type 1 task done
+2022/06/13 00:09:07 14898申请到reduce类型的编号为2的任务
+2022/06/13 00:09:07 14898 report reduce type 2 task done
+2022/06/13 00:09:07 14898申请到reduce类型的编号为3的任务
+2022/06/13 00:09:07 14898 report reduce type 3 task done
+2022/06/13 00:09:07 14898申请到reduce类型的编号为4的任务
+2022/06/13 00:09:07 14898 report reduce type 4 task done
+2022/06/13 00:09:07 14898申请到reduce类型的编号为5的任务
+2022/06/13 00:09:07 14898 report reduce type 5 task done
+2022/06/13 00:09:07 14898申请到reduce类型的编号为6的任务
+2022/06/13 00:09:07 14897申请到reduce类型的编号为7的任务
+2022/06/13 00:09:07 14897 report reduce type 7 task done
+2022/06/13 00:09:07 14897申请到reduce类型的编号为8的任务
+2022/06/13 00:09:08 14898 report reduce type 6 task done
+2022/06/13 00:09:08 14898申请到reduce类型的编号为9的任务
+2022/06/13 00:09:08 14897 report reduce type 8 task done
+2022/06/13 00:09:08 14898 report reduce type 9 task done
 没有map或者reduce tasks来分配
-没有map或者reduce tasks来分配
+2022/06/13 00:09:08 request task from server failed
 --- indexer test: PASS
+没有map或者reduce tasks来分配
+2022/06/13 00:09:09 request task from server failed
 *** Starting map parallelism test.
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
+2022/06/13 00:09:10 register successfully
+2022/06/13 00:09:10 register successfully
+2022/06/13 00:09:10 14934申请到map类型的编号为0的任务
+2022/06/13 00:09:10 14935申请到map类型的编号为1的任务
+2022/06/13 00:09:11 14934 report map type 0 task done
+2022/06/13 00:09:11 14934申请到map类型的编号为2的任务
+2022/06/13 00:09:11 14935 report map type 1 task done
+2022/06/13 00:09:11 14935申请到map类型的编号为3的任务
+2022/06/13 00:09:12 14934 report map type 2 task done
+2022/06/13 00:09:12 14934申请到map类型的编号为4的任务
+2022/06/13 00:09:12 14935 report map type 3 task done
+2022/06/13 00:09:12 14935申请到map类型的编号为5的任务
+2022/06/13 00:09:13 14934 report map type 4 task done
+2022/06/13 00:09:13 14934申请到map类型的编号为6的任务
+2022/06/13 00:09:13 14935 report map type 5 task done
+2022/06/13 00:09:13 14935申请到map类型的编号为7的任务
+2022/06/13 00:09:14 14935 report map type 7 task done
+2022/06/13 00:09:14 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:14 14934 report map type 6 task done
+2022/06/13 00:09:14 14934申请到reduce类型的编号为0的任务
+2022/06/13 00:09:14 14934 report reduce type 0 task done
+2022/06/13 00:09:14 14934申请到reduce类型的编号为1的任务
+2022/06/13 00:09:14 14934 report reduce type 1 task done
+2022/06/13 00:09:14 14934申请到reduce类型的编号为2的任务
+2022/06/13 00:09:14 14934 report reduce type 2 task done
+2022/06/13 00:09:14 14934申请到reduce类型的编号为3的任务
+2022/06/13 00:09:14 14934 report reduce type 3 task done
+2022/06/13 00:09:14 14934申请到reduce类型的编号为4的任务
+2022/06/13 00:09:14 14934 report reduce type 4 task done
+2022/06/13 00:09:14 14934申请到reduce类型的编号为5的任务
+2022/06/13 00:09:14 14934 report reduce type 5 task done
+2022/06/13 00:09:14 14934申请到reduce类型的编号为6的任务
+2022/06/13 00:09:14 14934 report reduce type 6 task done
+2022/06/13 00:09:14 14934申请到reduce类型的编号为7的任务
+2022/06/13 00:09:14 14934 report reduce type 7 task done
+2022/06/13 00:09:14 14934申请到reduce类型的编号为8的任务
+2022/06/13 00:09:14 14934 report reduce type 8 task done
+2022/06/13 00:09:14 14934申请到reduce类型的编号为9的任务
+2022/06/13 00:09:14 14934 report reduce type 9 task done
 没有map或者reduce tasks来分配
+2022/06/13 00:09:14 request task from server failed
 没有map或者reduce tasks来分配
+2022/06/13 00:09:15 request task from server failed
 --- map parallelism test: PASS
 *** Starting reduce parallelism test.
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
+2022/06/13 00:09:17 register successfully
+2022/06/13 00:09:17 register successfully
+2022/06/13 00:09:17 14971申请到map类型的编号为1的任务
+2022/06/13 00:09:17 14972申请到map类型的编号为0的任务
+2022/06/13 00:09:17 14972 report map type 0 task done
+2022/06/13 00:09:17 14972申请到map类型的编号为2的任务
+2022/06/13 00:09:17 14971 report map type 1 task done
+2022/06/13 00:09:17 14971申请到map类型的编号为3的任务
+2022/06/13 00:09:17 14972 report map type 2 task done
+2022/06/13 00:09:17 14972申请到map类型的编号为4的任务
+2022/06/13 00:09:17 14971 report map type 3 task done
+2022/06/13 00:09:17 14971申请到map类型的编号为5的任务
+2022/06/13 00:09:17 14971 report map type 5 task done
+2022/06/13 00:09:17 14972 report map type 4 task done
+2022/06/13 00:09:17 14972申请到map类型的编号为6的任务
+2022/06/13 00:09:17 14971申请到map类型的编号为7的任务
+2022/06/13 00:09:17 14971 report map type 7 task done
+2022/06/13 00:09:17 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:17 14972 report map type 6 task done
+2022/06/13 00:09:17 14972申请到reduce类型的编号为0的任务
+2022/06/13 00:09:18 14971申请到reduce类型的编号为1的任务
+2022/06/13 00:09:18 14972 report reduce type 0 task done
+2022/06/13 00:09:18 14972申请到reduce类型的编号为2的任务
+2022/06/13 00:09:19 14971 report reduce type 1 task done
+2022/06/13 00:09:19 14971申请到reduce类型的编号为3的任务
+2022/06/13 00:09:19 14972 report reduce type 2 task done
+2022/06/13 00:09:19 14972申请到reduce类型的编号为4的任务
+2022/06/13 00:09:21 14971 report reduce type 3 task done
+2022/06/13 00:09:21 14971申请到reduce类型的编号为5的任务
+2022/06/13 00:09:21 14972 report reduce type 4 task done
+2022/06/13 00:09:21 14972申请到reduce类型的编号为6的任务
+2022/06/13 00:09:22 14971 report reduce type 5 task done
+2022/06/13 00:09:22 14971申请到reduce类型的编号为7的任务
+2022/06/13 00:09:22 14971 report reduce type 7 task done
+2022/06/13 00:09:22 14971申请到reduce类型的编号为8的任务
+2022/06/13 00:09:22 14972 report reduce type 6 task done
+2022/06/13 00:09:22 14971 report reduce type 8 task done
+2022/06/13 00:09:22 14972申请到reduce类型的编号为9的任务
+2022/06/13 00:09:23 14972 report reduce type 9 task done
 没有map或者reduce tasks来分配
+2022/06/13 00:09:23 request task from server failed
 没有map或者reduce tasks来分配
+2022/06/13 00:09:23 request task from server failed
 --- reduce parallelism test: PASS
 *** Starting job count test.
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
+2022/06/13 00:09:26 register successfully
+2022/06/13 00:09:26 register successfully
+2022/06/13 00:09:26 15009申请到map类型的编号为0的任务
+2022/06/13 00:09:26 15010申请到map类型的编号为1的任务
+2022/06/13 00:09:30 15009 report map type 0 task done
+2022/06/13 00:09:30 15009申请到map类型的编号为2的任务
+2022/06/13 00:09:30 15010 report map type 1 task done
+2022/06/13 00:09:30 15010申请到map类型的编号为3的任务
+2022/06/13 00:09:34 15009 report map type 2 task done
+2022/06/13 00:09:34 15009申请到map类型的编号为4的任务
+2022/06/13 00:09:34 15010 report map type 3 task done
+2022/06/13 00:09:34 15010申请到map类型的编号为5的任务
+2022/06/13 00:09:38 15009 report map type 4 task done
+2022/06/13 00:09:38 15009申请到map类型的编号为6的任务
+2022/06/13 00:09:38 15010 report map type 5 task done
+2022/06/13 00:09:38 15010申请到map类型的编号为7的任务
+2022/06/13 00:09:40 15010 report map type 7 task done
+2022/06/13 00:09:40 15009 report map type 6 task done
+2022/06/13 00:09:40 15009申请到reduce类型的编号为0的任务
+2022/06/13 00:09:40 15010申请到reduce类型的编号为1的任务
+2022/06/13 00:09:40 15009 report reduce type 0 task done
+2022/06/13 00:09:40 15010 report reduce type 1 task done
+2022/06/13 00:09:40 15009申请到reduce类型的编号为2的任务
+2022/06/13 00:09:40 15010申请到reduce类型的编号为3的任务
+2022/06/13 00:09:40 15010 report reduce type 3 task done
+2022/06/13 00:09:40 15009 report reduce type 2 task done
+2022/06/13 00:09:40 15010申请到reduce类型的编号为4的任务
+2022/06/13 00:09:40 15009申请到reduce类型的编号为5的任务
+2022/06/13 00:09:40 15010 report reduce type 4 task done
+2022/06/13 00:09:40 15009 report reduce type 5 task done
+2022/06/13 00:09:40 15010申请到reduce类型的编号为6的任务
+2022/06/13 00:09:40 15009申请到reduce类型的编号为7的任务
+2022/06/13 00:09:40 15010 report reduce type 6 task done
+2022/06/13 00:09:40 15009 report reduce type 7 task done
+2022/06/13 00:09:40 15010申请到reduce类型的编号为8的任务
+2022/06/13 00:09:40 15009申请到reduce类型的编号为9的任务
+2022/06/13 00:09:40 15010 report reduce type 8 task done
+2022/06/13 00:09:40 15009 report reduce type 9 task done
 没有map或者reduce tasks来分配
+2022/06/13 00:09:40 request task from server failed
 没有map或者reduce tasks来分配
+2022/06/13 00:09:40 request task from server failed
+2022/06/13 00:09:40 register successfully
+2022/06/13 00:09:40 register successfully
 没有map或者reduce tasks来分配
+2022/06/13 00:09:40 request task from server failed
 没有map或者reduce tasks来分配
+2022/06/13 00:09:40 request task from server failed
 --- job count test: PASS
 *** Starting early exit test.
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
+2022/06/13 00:09:43 register successfully
+2022/06/13 00:09:43 register successfully
+2022/06/13 00:09:43 register successfully
+2022/06/13 00:09:43 15064申请到map类型的编号为0的任务
+2022/06/13 00:09:43 15065申请到map类型的编号为1的任务
+2022/06/13 00:09:43 15066申请到map类型的编号为2的任务
+2022/06/13 00:09:43 15064 report map type 0 task done
+2022/06/13 00:09:43 15064申请到map类型的编号为3的任务
+2022/06/13 00:09:43 15066 report map type 2 task done
+2022/06/13 00:09:43 15065 report map type 1 task done
+2022/06/13 00:09:43 15066申请到map类型的编号为4的任务
+2022/06/13 00:09:43 15065申请到map类型的编号为5的任务
+2022/06/13 00:09:43 15064 report map type 3 task done
+2022/06/13 00:09:43 15065 report map type 5 task done
+2022/06/13 00:09:43 15064申请到map类型的编号为6的任务
+2022/06/13 00:09:43 15065申请到map类型的编号为7的任务
+2022/06/13 00:09:43 15066 report map type 4 task done
+2022/06/13 00:09:43 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:43 15065 report map type 7 task done
+2022/06/13 00:09:43 15064 report map type 6 task done
+2022/06/13 00:09:43 15065申请到reduce类型的编号为0的任务
+2022/06/13 00:09:43 15064申请到reduce类型的编号为1的任务
+2022/06/13 00:09:43 15065 report reduce type 0 task done
+2022/06/13 00:09:43 15064 report reduce type 1 task done
+2022/06/13 00:09:43 15065申请到reduce类型的编号为2的任务
+2022/06/13 00:09:43 15064申请到reduce类型的编号为3的任务
+2022/06/13 00:09:43 15064 report reduce type 3 task done
+2022/06/13 00:09:43 15064申请到reduce类型的编号为4的任务
+2022/06/13 00:09:43 15064 report reduce type 4 task done
+2022/06/13 00:09:43 15064申请到reduce类型的编号为5的任务
+2022/06/13 00:09:43 15064 report reduce type 5 task done
+2022/06/13 00:09:43 15064申请到reduce类型的编号为6的任务
+2022/06/13 00:09:44 15066申请到reduce类型的编号为7的任务
+2022/06/13 00:09:44 15066 report reduce type 7 task done
+2022/06/13 00:09:44 15066申请到reduce类型的编号为8的任务
+2022/06/13 00:09:44 15066 report reduce type 8 task done
+2022/06/13 00:09:44 15066申请到reduce类型的编号为9的任务
+2022/06/13 00:09:44 15066 report reduce type 9 task done
+2022/06/13 00:09:46 15065 report reduce type 2 task done
+2022/06/13 00:09:46 15064 report reduce type 6 task done
 没有map或者reduce tasks来分配
+2022/06/13 00:09:46 request task from server failed
 没有map或者reduce tasks来分配
+2022/06/13 00:09:47 request task from server failed
 没有map或者reduce tasks来分配
+2022/06/13 00:09:47 request task from server failed
 --- early exit test: PASS
 *** Starting crash test.
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-reply task done
-mr-crash-all mr-correct-crash.txt differ: byte 32, line 1
---- crash output is not the same as mr-correct-crash.txt
---- crash test: FAIL
-*** FAILED SOME TESTS
+2022/06/13 00:09:48 The number of input files is 8
+2022/06/13 00:09:50 register successfully
+2022/06/13 00:09:50 register successfully
+2022/06/13 00:09:50 register successfully
+2022/06/13 00:09:50 15128申请到map类型的编号为0的任务
+2022/06/13 00:09:50 15134申请到map类型的编号为1的任务
+2022/06/13 00:09:50 15135申请到map类型的编号为2的任务
+2022/06/13 00:09:50 register successfully
+2022/06/13 00:09:50 15136申请到map类型的编号为3的任务
+2022/06/13 00:09:50 15135 report map type 2 task done
+2022/06/13 00:09:50 15134 report map type 1 task done
+2022/06/13 00:09:50 15135申请到map类型的编号为4的任务
+2022/06/13 00:09:50 15134申请到map类型的编号为5的任务
+2022/06/13 00:09:50 15135 report map type 4 task done
+2022/06/13 00:09:50 15135申请到map类型的编号为6的任务
+2022/06/13 00:09:51 register successfully
+2022/06/13 00:09:51 register successfully
+2022/06/13 00:09:51 15171申请到map类型的编号为7的任务
+2022/06/13 00:09:51 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:51 register successfully
+2022/06/13 00:09:51 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:51 15128 report map type 0 task done
+2022/06/13 00:09:51 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:52 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:52 register successfully
+2022/06/13 00:09:52 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:52 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:52 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:53 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:53 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:53 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:53 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:54 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:54 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:54 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:54 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:55 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:55 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:55 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:55 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:56 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:56 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:56 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:56 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:57 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:57 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:57 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:57 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:58 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:58 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:58 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:58 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:59 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:59 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:59 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:09:59 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:00 15170申请到map类型的编号为3的任务
+2022/06/13 00:10:00 15194申请到map类型的编号为5的任务
+2022/06/13 00:10:00 15194 report map type 5 task done
+2022/06/13 00:10:00 15194申请到map类型的编号为6的任务
+2022/06/13 00:10:00 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:00 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:01 register successfully
+2022/06/13 00:10:01 15207申请到map类型的编号为7的任务
+2022/06/13 00:10:01 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:01 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:02 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:02 register successfully
+2022/06/13 00:10:02 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:02 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:03 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:03 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:03 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:04 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:04 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:04 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:05 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:05 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:05 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:06 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:06 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:06 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:07 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:07 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:07 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:08 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:08 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:08 15194 report map type 6 task done
+2022/06/13 00:10:08 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:08 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:09 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:09 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:09 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:09 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:10 15186申请到map类型的编号为3的任务
+2022/06/13 00:10:10 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:10 15186 report map type 3 task done
+2022/06/13 00:10:10 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:10 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:10 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:11 15216申请到map类型的编号为7的任务
+2022/06/13 00:10:11 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:11 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:11 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:12 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:12 register successfully
+2022/06/13 00:10:12 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:12 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:12 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:13 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:13 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:13 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:14 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:14 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:14 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:14 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:15 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:15 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:15 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:15 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:16 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:16 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:16 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:16 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:17 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:17 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:17 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:17 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:18 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:18 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:18 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:18 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:19 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:19 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:19 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:19 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:20 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:20 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:20 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:20 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:21 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:21 15186申请到map类型的编号为7的任务
+2022/06/13 00:10:21 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:21 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:22 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:22 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:22 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:23 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:23 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:23 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:24 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:24 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:24 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:25 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:25 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:25 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:26 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:26 Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+2022/06/13 00:10:26 15186 report map type 7 task done
+2022/06/13 00:10:26 15186申请到reduce类型的编号为0的任务
+2022/06/13 00:10:26 15186 report reduce type 0 task done
+2022/06/13 00:10:26 15186申请到reduce类型的编号为1的任务
+2022/06/13 00:10:26 15186 report reduce type 1 task done
+2022/06/13 00:10:26 15186申请到reduce类型的编号为2的任务
+2022/06/13 00:10:26 15194申请到reduce类型的编号为3的任务
+2022/06/13 00:10:26 15194 report reduce type 3 task done
+2022/06/13 00:10:26 15194申请到reduce类型的编号为4的任务
+2022/06/13 00:10:26 15194 report reduce type 4 task done
+2022/06/13 00:10:26 15194申请到reduce类型的编号为5的任务
+2022/06/13 00:10:27 15128申请到reduce类型的编号为6的任务
+2022/06/13 00:10:27 15128 report reduce type 6 task done
+2022/06/13 00:10:27 15128申请到reduce类型的编号为7的任务
+2022/06/13 00:10:27 15128 report reduce type 7 task done
+2022/06/13 00:10:27 15128申请到reduce类型的编号为8的任务
+2022/06/13 00:10:27 15128 report reduce type 8 task done
+2022/06/13 00:10:27 15128申请到reduce类型的编号为9的任务
+2022/06/13 00:10:27 register successfully
+2022/06/13 00:10:34 15128 report reduce type 9 task done
+2022/06/13 00:10:35 15186 report reduce type 2 task done
+2022/06/13 00:10:36 15239申请到reduce类型的编号为5的任务
+2022/06/13 00:10:46 15239 report reduce type 5 task done
+没有map或者reduce tasks来分配
+2022/06/13 00:10:46 request task from server failed
+没有map或者reduce tasks来分配
+2022/06/13 00:10:46 request task from server failed
+没有map或者reduce tasks来分配
+2022/06/13 00:10:47 request task from server failed
+没有map或者reduce tasks来分配
+2022/06/13 00:10:47 request task from server failed
+2022/06/13 00:10:47 register successfully
+没有map或者reduce tasks来分配
+2022/06/13 00:10:47 request task from server failed
+2022/06/13 00:10:47 register successfully
+没有map或者reduce tasks来分配
+2022/06/13 00:10:47 request task from server failed
+2022/06/13 00:10:48 register successfully
+没有map或者reduce tasks来分配
+2022/06/13 00:10:48 request task from server failed
+--- crash test: PASS
+*** PASSED ALL TESTS

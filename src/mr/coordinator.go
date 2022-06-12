@@ -49,8 +49,22 @@ func (c *Coordinator) RegisterWorker(args *RegisterWorkerArgs, reply *RegisterWo
 	}
 }
 
+func (c *Coordinator) testCrashAndHandle(task *Task) {
+	time.Sleep(10 * time.Second)
+	c.mu.Lock()
+	defer c.mu.Unlock()
+	if !task.Done { //如果发现过了10s任务还是没有完成，就将该任务设置为未分配
+		task.Allocated = false
+		switch task.Type {
+		case "map":
+			c.MapAllocatedNum--
+		case "reduce":
+			c.ReduceAllocatedNum--
+		}
+	}
+}
+
 func (c *Coordinator) AssignTask(args *RequestTaskArgs, reply *RequestTaskReply) error {
-	//log.Printf("%v请求任务", args.Url)
 	c.mu.Lock()
 	defer c.mu.Unlock()
 	//Map任务没有分配完
@@ -64,10 +78,12 @@ func (c *Coordinator) AssignTask(args *RequestTaskArgs, reply *RequestTaskReply)
 				c.MapAllocatedNum++
 				reply.Task = c.MapTasks[taskNumber]
 				reply.Err = nil
+				go c.testCrashAndHandle(&c.MapTasks[taskNumber])
 				break
 			}
 		}
-	} else if c.MapAllCompleted() && !c.MapAllCompleted() { //Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+	} else if c.MapAllCompleted() == false { //Map分配结束但是所有Map没有结束，让worker等待所有map task结束
+		log.Printf("Map分配结束但是所有Map没有结束，让worker等待所有map task结束\n")
 		reply.Task = Task{TaskNumber: -1, Type: "map"}
 		reply.Err = nil
 	} else if c.ReduceAllAllocated() == false { //Map任务全部结束，Reduce任务还没有分配完
@@ -80,10 +96,11 @@ func (c *Coordinator) AssignTask(args *RequestTaskArgs, reply *RequestTaskReply)
 				c.ReduceAllocatedNum++
 				reply.Task = c.ReduceTasks[taskNumber]
 				reply.Err = nil
+				go c.testCrashAndHandle(&c.ReduceTasks[taskNumber])
 				break
 			}
 		}
-	} else if c.ReduceAllAllocated() && !c.ReduceAllCompleted() { //Reduce任务全部分配结束，但是没有全部完成
+	} else if c.ReduceAllCompleted() == false { //Reduce任务全部分配结束，但是没有全部完成
 		reply.Task = Task{TaskNumber: -1, Type: "reduce"}
 		reply.Err = nil
 	} else { //reduce任务全部完成，没有map或者reduce task来分配
@@ -97,8 +114,9 @@ func (c *Coordinator) AssignTask(args *RequestTaskArgs, reply *RequestTaskReply)
 }
 
 func (c *Coordinator) TaskDone(args *TaskDoneArgs, reply *TaskDoneReply) error {
-	//log.Printf("%v report %v type %v task done", args.Url, args.Type, args.TaskNumber)
+	log.Printf("%v report %v type %v task done", args.Url, args.Type, args.TaskNumber)
 	c.mu.Lock()
+
 	defer c.mu.Unlock()
 	switch args.Type {
 	case "map":
