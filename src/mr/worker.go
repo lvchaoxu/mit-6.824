@@ -1,10 +1,16 @@
 package mr
 
-import "fmt"
-import "log"
-import "net/rpc"
-import "hash/fnv"
-
+import (
+	"encoding/json"
+	"fmt"
+	"hash/fnv"
+	"io/ioutil"
+	"log"
+	"net/rpc"
+	"os"
+	"sort"
+	"time"
+)
 
 //
 // Map functions return a slice of KeyValue.
@@ -13,6 +19,14 @@ type KeyValue struct {
 	Key   string
 	Value string
 }
+
+// for sorting by key.
+type ByKey []KeyValue
+
+// for sorting by key.
+func (a ByKey) Len() int           { return len(a) }
+func (a ByKey) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a ByKey) Less(i, j int) bool { return a[i].Key < a[j].Key }
 
 //
 // use ihash(key) % NReduce to choose the reduce
@@ -24,46 +38,144 @@ func ihash(key string) int {
 	return int(h.Sum32() & 0x7fffffff)
 }
 
+func HandleMapTask(mapf func(string, string) []KeyValue, task *Task) {
+	//fmt.Printf("开始处理Map任务%v", task.TaskNumber)
+	intermediate := make([][]KeyValue, task.NReduce)
+	for _, filename := range task.Files {
+		file, err := os.Open(filename)
+		if err != nil {
+			log.Fatalf("os open %v failed", filename)
+		}
+		content, err := ioutil.ReadAll(file)
+		if err != nil {
+			log.Fatalf("os read file %v error", file)
+		}
+		file.Close()
+		kva := mapf(filename, string(content))
+		for _, kv := range kva {
+			bucketId := ihash(kv.Key) % task.NReduce
+			intermediate[bucketId] = append(intermediate[bucketId], kv)
+		}
+	}
+	//写到中间文件中 mr-out-x-y
+	for i := 0; i < task.NReduce; i++ {
+		oname := fmt.Sprintf("mr-out-%v-%v", task.TaskNumber, i)
+		ofile, _ := os.Create(oname)
+		enc := json.NewEncoder(ofile)
+		for _, kv := range intermediate[i] {
+			err := enc.Encode(&kv)
+			if err != nil {
+				log.Fatal("fatal error")
+			}
+		}
+		ofile.Close()
+	}
+}
+
+func HandleReduceTask(reducef func(string, []string) string,
+	task *Task) {
+	intermediate := []KeyValue{}
+	for mapTaskNumber := 0; mapTaskNumber < task.MMap; mapTaskNumber++ {
+		iname := fmt.Sprintf("mr-out-%v-%v", mapTaskNumber, task.TaskNumber)
+		ifile, _ := os.Open(iname)
+		dec := json.NewDecoder(ifile)
+		for {
+			var kv KeyValue
+			if err := dec.Decode(&kv); err != nil {
+				break
+			}
+			intermediate = append(intermediate, kv)
+		}
+		ifile.Close()
+		os.Remove(iname)
+	}
+	oname := fmt.Sprintf("mr-out-%v", task.TaskNumber)
+	ofile, _ := os.Create(oname)
+
+	sort.Sort(ByKey(intermediate))
+
+	for i := 0; i < len(intermediate); {
+		j := i + 1
+		for j < len(intermediate) && intermediate[i].Key == intermediate[j].Key {
+			j++
+		}
+		values := []string{}
+		for k := i; k < j; k++ {
+			values = append(values, intermediate[k].Value)
+		}
+		output := reducef(intermediate[i].Key, values)
+		fmt.Fprintf(ofile, "%v %v\n", intermediate[i].Key, output)
+		i = j
+	}
+	ofile.Close()
+}
 
 //
 // main/mrworker.go calls this function.
 //
 func Worker(mapf func(string, string) []KeyValue,
 	reducef func(string, []string) string) {
-
-	// Your worker implementation here.
-
-	// uncomment to send the Example RPC to the coordinator.
-	// CallExample()
-
+	//log.Println("worker启动了")
+	Register()
+	//log.Println("注册成功")
+	for {
+		task := RequestTask()
+		if task == nil {
+			break
+		} else if task.TaskNumber < 0 {
+			//log.Printf("等待%v阶段结束\n", task.Type)
+			time.Sleep(time.Second)
+			continue
+		}
+		//log.Printf("申请到%v类型的编号为%v的任务", task.Type, task.TaskNumber)
+		if task.Type == "map" {
+			HandleMapTask(mapf, task)
+		} else {
+			HandleReduceTask(reducef, task)
+		}
+		ReplyTaskDone(task.TaskNumber, task.Type)
+	}
 }
 
-//
-// example function to show how to make an RPC call to the coordinator.
-//
-// the RPC argument and reply types are defined in rpc.go.
-//
-func CallExample() {
-
-	// declare an argument structure.
-	args := ExampleArgs{}
-
-	// fill in the argument(s).
-	args.X = 99
-
-	// declare a reply structure.
-	reply := ExampleReply{}
-
-	// send the RPC request, wait for the reply.
-	// the "Coordinator.Example" tells the
-	// receiving server that we'd like to call
-	// the Example() method of struct Coordinator.
-	ok := call("Coordinator.Example", &args, &reply)
+func Register() {
+	args := RegisterWorkerArgs{
+		Url: string(os.Getpid()),
+	}
+	reply := RegisterWorkerReply{}
+	ok := call("Coordinator.RegisterWorker", &args, &reply)
 	if ok {
-		// reply.Y should be 100.
-		fmt.Printf("reply.Y %v\n", reply.Y)
+		log.Println("register successfully")
 	} else {
-		fmt.Printf("call failed!\n")
+		log.Fatal("called to the server failed")
+	}
+}
+
+func RequestTask() *Task {
+	args := RequestTaskArgs{
+		Url: string(os.Getpid()),
+	}
+	reply := RequestTaskReply{}
+	ok := call("Coordinator.AssignTask", &args, &reply)
+	if ok {
+		return &reply.Task
+	} else {
+		log.Fatal("request task from server failed")
+		return nil
+	}
+}
+
+func ReplyTaskDone(TaskNumber int, Type string) {
+	args := TaskDoneArgs{
+		Url:        string(os.Getpid()),
+		TaskNumber: TaskNumber,
+		Type:       Type,
+	}
+	reply := TaskDoneReply{}
+	ok := call("Coordinator.TaskDone", &args, &reply)
+	if ok {
+		//fmt.Println("reply task done")
+	} else {
+		log.Fatal("reply task to coordinator failed")
 	}
 }
 

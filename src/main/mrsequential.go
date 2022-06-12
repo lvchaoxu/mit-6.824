@@ -36,6 +36,7 @@ func main() {
 	// accumulate the intermediate Map output.
 	//
 	intermediate := []mr.KeyValue{}
+	log.Printf("The number of input files is %v", len(os.Args[2:]))
 	for _, filename := range os.Args[2:] {
 		file, err := os.Open(filename)
 		if err != nil {

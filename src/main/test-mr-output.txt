@@ -1,0 +1,155 @@
+*** Starting wc test.
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+没有map或者reduce tasks来分配
+没有map或者reduce tasks来分配
+没有map或者reduce tasks来分配
+--- wc test: PASS
+*** Starting indexer test.
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+没有map或者reduce tasks来分配
+没有map或者reduce tasks来分配
+--- indexer test: PASS
+*** Starting map parallelism test.
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+没有map或者reduce tasks来分配
+没有map或者reduce tasks来分配
+--- map parallelism test: PASS
+*** Starting reduce parallelism test.
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+没有map或者reduce tasks来分配
+没有map或者reduce tasks来分配
+--- reduce parallelism test: PASS
+*** Starting job count test.
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+没有map或者reduce tasks来分配
+没有map或者reduce tasks来分配
+没有map或者reduce tasks来分配
+没有map或者reduce tasks来分配
+--- job count test: PASS
+*** Starting early exit test.
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+没有map或者reduce tasks来分配
+没有map或者reduce tasks来分配
+没有map或者reduce tasks来分配
+--- early exit test: PASS
+*** Starting crash test.
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+reply task done
+mr-crash-all mr-correct-crash.txt differ: byte 32, line 1
+--- crash output is not the same as mr-correct-crash.txt
+--- crash test: FAIL
+*** FAILED SOME TESTS
